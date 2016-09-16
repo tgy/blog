@@ -3,8 +3,11 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'tgy'
-SITENAME = 'tgyblog'
+SITENAME = 'Valentin Iovene (a.k.a. toogy/tgy)'
 SITEURL = 'https://blog.too.gy'
+
+# Content with dates in the future will get a default status of 'draft'
+WITH_FUTURE_DATES = False
 
 PATH = 'content'
 
@@ -32,6 +35,6 @@ SOCIAL = (('You can add links in your config file', '#'),
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
 
 THEME = 'nikhil-theme'
