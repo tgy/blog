@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+import os
 
-AUTHOR = 'tgy'
+AUTHOR = 'Valentin Iovene'
 SITENAME = 'Valentin Iovene (a.k.a. toogy/tgy)'
 SITEURL = 'https://blog.too.gy'
 
@@ -23,18 +24,49 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+# LINKS = (('Pelican', 'http://getpelican.com/'),
+         # ('Python.org', 'http://python.org/'),
+         # ('Jinja2', 'http://jinja.pocoo.org/'),
+         # ('You can modify those links in your config file', '#'),)
+
+LINKS = (('about', 'https://too.gy'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+# SOCIAL = (('You can add links in your config file', '#'),
+          # ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
-THEME = 'nikhil-theme'
+THEME = 'theme'
+
+PLUGIN_PATHS = ['plugins']
+PLUGINS = [
+    # 'render_math',
+    'pandoc_reader',
+]
+
+STATIC_PATHS = ['assets']
+
+for file in os.listdir(os.path.join(PATH, 'posts')):
+    if os.path.isdir(os.path.join(PATH, 'posts', file)):
+        STATIC_PATHS.append(os.path.join('posts', file))
+
+ARTICLE_PATHS = ['posts']
+
+PANDOC_ARGS = [
+    '--mathjax',
+    '--smart',
+    '--number-sections',
+    '--highlight-style', 'pygments',
+]
+
+PANDOC_EXTENSIONS = [
+    # '+hard_line_breaks',
+]
+
+# MATH_JAX = {
+    # 'force_tls': True,
+# }
