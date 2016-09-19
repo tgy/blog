@@ -59,7 +59,7 @@ ARTICLE_PATHS = ['posts']
 PANDOC_ARGS = [
     '--mathjax',
     '--smart',
-    '--number-sections',
+    # '--number-sections',
     '--highlight-style', 'pygments',
 ]
 
