@@ -60,7 +60,10 @@ PANDOC_ARGS = [
     '--mathjax',
     '--smart',
     # '--number-sections',
-    '--highlight-style', 'pygments',
+    '--no-highlight',
+    '-t', 'html5',
+    # '--highlight-style', 'pygments',
+    '--filter', 'pandoc-citeproc',
 ]
 
 PANDOC_EXTENSIONS = [

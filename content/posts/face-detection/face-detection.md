@@ -19,13 +19,15 @@ returning *bounding boxes* around the faces contained in this image.
 src="posts/face-detection/as-a-function.svg" width="70%">
 </div>
 
-A few applications:
+Face detection
 
-- *Facebook* detects faces in images you upload and make it easier for you to
-tag your friends,
-- *Snapchat*'s face swapping feature,
-- Law Enforcement using *face recognition* on a video surveillance system
-stream (thousands of cameras) to localize a suspect in a big city.
+- is used by *Facebook* to detect faces in images you share and make it easier
+for you to tag your friends,
+- can be used to **track** faces in videos of people moving around (e.g.
+*Snapchat*'s face swap feature requires face detection),
+- and is a prerequisite for any real-life applications of face recognition
+*(e.g. Law Enforcement localizing a suspect in a big city using video
+surveillance systems)*.
 
 The detection process needs to be fast enough to keep up with the demand
 (millions of users / billions of streamed images).
@@ -53,14 +55,6 @@ MB-LBP of different sizes and at different locations are considered
 <div style="text-align: center;">
 <img alt="MB-LBP features" src="posts/face-detection/animated_mblbp.gif">
 </div>
-
-<div style="text-align: center;">
-<img alt="MB-LBP features" src="posts/face-detection/mblbp.png">
-</div>
-
-We can do math right? Yes sure:
-
-$$x^2 = \frac{1}{2}$$
 
 ```cpp
 std::vector<mblbp_feature> mblbp_all_features()
